@@ -1,0 +1,25 @@
+-- KAKAPO Database Schema - Auth Setup
+-- Migration: 20240101000005_auth_trigger
+
+-- =============================================================================
+-- NOTE: NO AUTH TRIGGERS NEEDED
+-- =============================================================================
+-- We use Supabase Auth's auth.users table directly without a custom users table.
+-- Therefore, no triggers are needed to sync user profiles.
+--
+-- User metadata (first_name, last_name) is stored directly in auth.users.raw_user_meta_data
+-- and is set during user registration via Supabase Auth signup.
+--
+-- Example registration data structure:
+-- {
+--   "email": "user@example.com",
+--   "password": "secure_password",
+--   "options": {
+--     "data": {
+--       "first_name": "Jan",
+--       "last_name": "Kowalski"
+--     }
+--   }
+-- }
+
+-- No SQL statements needed in this migration file.
